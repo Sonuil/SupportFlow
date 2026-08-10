@@ -347,15 +347,23 @@ async function createTicket(event) {
         }
 
 
-        const createdTicket = await response.json();
+       const responseText = await response.text();
 
-        alert(
-            "Ticket created successfully!\n\n" +
-            "Ticket ID: " +
-            (createdTicket.ticket_id || "Created")
-        );
+console.log("POST response:", responseText);
 
+let createdTicket = {};
 
+try {
+    createdTicket = responseText ? JSON.parse(responseText) : {};
+} catch (e) {
+    console.warn("Response was not JSON:", responseText);
+}
+
+alert(
+    "Ticket created successfully!\n\n" +
+    "Ticket ID: " +
+    (createdTicket.ticket_id || createdTicket.id || "Created")
+);
         const form =
             document.getElementById("ticket-form");
 
