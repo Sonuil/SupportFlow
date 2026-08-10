@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ticket Details - SupportFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container nav-container">
+
+        <div class="logo">
+            SupportFlow
+        </div>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="index.html#create">Create Ticket</a>
+            <a href="index.html#tickets">Tickets</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="container ticket-detail-page">
+
+    <div class="section-label">
+        SUPPORT
+    </div>
+
+    <h1>Ticket Details</h1>
+
+    <div id="loading">
+        Loading ticket...
+    </div>
+
+    <div id="error-message" class="error-box" style="display: none;"></div>
+
+
+    <div id="ticket-container" style="display: none;">
+
+        <div class="ticket-detail-card">
+
+            <div class="ticket-detail-header">
+
+                <div>
+                    <div id="ticket-id" class="ticket-id"></div>
+
+                    <h2 id="ticket-subject"></h2>
+                </div>
+
+                <span id="ticket-status" class="status-badge"></span>
+
+            </div>
+
+
+            <div class="ticket-info">
+
+                <div class="info-row">
+                    <strong>Customer Name</strong>
+                    <span id="customer-name"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Customer Email</strong>
+                    <span id="customer-email"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Subject</strong>
+                    <span id="subject"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Description</strong>
+                    <span id="description"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Status</strong>
+                    <span id="details-status"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Support Notes</strong>
+                    <span id="support-notes"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Created</strong>
+                    <span id="created-at"></span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Updated</strong>
+                    <span id="updated-at"></span>
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="update-section">
+
+                <h3>Update Ticket</h3>
+
+                <form id="update-ticket-form">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select id="status" required>
+
+                        <option value="Open">
+                            Open
+                        </option>
+
+                        <option value="In Progress">
+                            In Progress
+                        </option>
+
+                        <option value="Closed">
+                            Closed
+                        </option>
+
+                    </select>
+
+
+                    <label for="notes">
+                        Support Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        rows="5"
+                        placeholder="Add support notes..."
+                    ></textarea>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Update Ticket
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © 2026 SupportFlow. Customer Support CRM.
+</footer>
+
+
+<script src="ticket-detail.js"></script>
+
+</body>
+</html>

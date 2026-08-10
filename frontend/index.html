@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SupportFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            SupportFlow
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#create">Create Ticket</a>
+            <a href="#tickets">Tickets</a>
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- DASHBOARD -->
+        <section class="hero" id="dashboard">
+
+            <div>
+
+                <h1>
+                    Customer Support
+                    <br>
+                    Made Simple.
+                </h1>
+
+                <p>
+                    Manage customer issues, track support tickets,
+                    and keep your support team organized with SupportFlow.
+                </p>
+
+                <a href="#create" class="btn">
+                    Create a Ticket
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREATE TICKET -->
+        <section class="section" id="create">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        SUPPORT
+                    </p>
+
+                    <h2>
+                        Create New Ticket
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form id="ticket-form" class="ticket-form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="customer-name">
+                            Customer Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            placeholder="Enter customer name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customer-email">
+                            Customer Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customer-email"
+                            placeholder="Enter customer email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="What is the issue?"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Describe the issue..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Submit Ticket
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- TICKETS -->
+        <section class="section" id="tickets">
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Support Tickets
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="refresh-btn"
+                    onclick="loadTickets()"
+                >
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTER -->
+
+            <div class="ticket-controls">
+
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search by ticket ID, name, email or description..."
+                >
+
+
+                <select id="status-filter">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="Open">
+                        Open
+                    </option>
+
+                    <option value="In Progress">
+                        In Progress
+                    </option>
+
+                    <option value="Closed">
+                        Closed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TICKET LIST -->
+
+            <div id="ticket-list">
+
+                <p class="loading">
+                    Loading tickets...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SupportFlow. Customer Support CRM.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
