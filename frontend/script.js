@@ -1,5 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/api/tickets/";
-
+const API_URL = "https://supportflow-9hor.onrender.com/api/tickets/";
 /* =========================
    HELPERS
 ========================= */
